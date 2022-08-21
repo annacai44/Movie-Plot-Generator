@@ -19,27 +19,28 @@ const app = express();
 app.use(cors());
 
 app.get('/cool', (req, res) => {
-  res.send('APP IS RUNNING.')
+  res.send('HI.')
 })
 
 app.get('/', (req, res) => {
-  axios.post('https://api.openai.com/v1/completions', {
-      model: "text-davinci-002",
-      // prompt: req.query.prompt,
-      prompt: "Are you happy?",
-      max_tokens: 256,
-      // temperature: parseInt(req.query.sliderValue),
-      temperature: 0.7
-    }, {
-      headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-      }
-    }).then((response) => {
-      // res.json(response.data.choices[0].text)
-      res.send(response.data.choices[0].text)
-    }).catch((err) => {
-      console.log(err);
-    })
+  res.json(process.env.OPENAI_API_KEY);
+  // axios.post('https://api.openai.com/v1/completions', {
+  //     model: "text-davinci-002",
+  //     // prompt: req.query.prompt,
+  //     prompt: "Are you happy?",
+  //     max_tokens: 256,
+  //     // temperature: parseInt(req.query.sliderValue),
+  //     temperature: 0.7
+  //   }, {
+  //     headers: {
+  //       'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+  //     }
+  //   }).then((response) => {
+  //     // res.json(response.data.choices[0].text)
+  //     res.send(response.data.choices[0].text)
+  //   }).catch((err) => {
+  //     console.log(err);
+  //   })
 })
 
 // listen out to changes on our port
