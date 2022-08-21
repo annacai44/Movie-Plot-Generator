@@ -27,7 +27,7 @@ if (process.env.NODE_ENV=== "production") {
     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 
-  app.get('/response', (req, res) => {
+  app.get('/', (req, res) => {
     axios.post('https://api.openai.com/v1/completions', {
         model: "text-davinci-002",
         prompt: req.query.prompt,
