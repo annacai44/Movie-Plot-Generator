@@ -29,6 +29,12 @@ select {
   width: 100%;
   margin: 10px 0;
 }
+
+footer {
+  font-size: 20px;
+  margin: 20px;
+}
+
 .slider {
   -webkit-appearance: none;
   width: 70%;
