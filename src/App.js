@@ -18,7 +18,7 @@ function App() {
 
   const getOpenAIResponse = () => {
     setIsLoading(true);
-    axios.get('http://localhost:8000', {
+    axios.get('movieplotgenerator.herokuapp.com', {
       params: {
         model: "text-davinci-002",
         prompt: `${isSynopsis ? prompt1 : prompt2}`,
