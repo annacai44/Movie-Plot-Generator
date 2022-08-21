@@ -23,7 +23,7 @@ app.get('/cool', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.json(process.env.OPENAI_API_KEY);
+  res.send(process.env.OPENAI_API_KEY);
   // axios.post('https://api.openai.com/v1/completions', {
   //     model: "text-davinci-002",
   //     // prompt: req.query.prompt,
