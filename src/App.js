@@ -36,7 +36,6 @@ function App() {
 
   useEffect(() => {
     if (isMounted.current) {
-      console.log("this is useEffect:", isSynopsis);
       getOpenAIResponse();
     } else {
       isMounted.current = true;

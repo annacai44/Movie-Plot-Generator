@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import axios from 'axios';
-const PORT = 8000;
+var PORT = process.env.PORT || 8000;
 
 dotenv.config();
 
@@ -11,9 +11,11 @@ const app = express();
 
 app.use(cors());
 
+app.get('/stop', (req, res) => {
+    res.send("APP IS RUNNING.");
+})
+
 app.get('/', (req, res) => {
-    console.log(req);
-    console.log(req.query.prompt);
     axios.post('https://api.openai.com/v1/completions', {
         model: "text-davinci-002",
         prompt: req.query.prompt,
