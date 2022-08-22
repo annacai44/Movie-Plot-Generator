@@ -61,7 +61,7 @@ function App() {
       <div className='app-body'>
             <Form>
               <h3>List any number of keywords you want in your film synopsis or script excerpt. Ex: man, woman, dog, McDonald's</h3>
-                <Form.Field control={TextArea} placeholder="Enter keywords for your synopsis..." onChange={(e) => setInputText(e.target.value)}/>
+                <Form.Field control={TextArea} placeholder="Enter keywords for your synopsis or excerpt..." onChange={(e) => setInputText(e.target.value)}/>
 
                 <h3>Choose length of film.</h3>
                 <select onChange={(e) => setInputLength(e.target.value)}>
