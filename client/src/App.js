@@ -29,8 +29,7 @@ function App() {
     })
     .then((res) => {
       console.log(res.data);
-      setResultText(res);
-      // {isSynopsis ? setResultText(res.data.replace(/\n/g, '')) : setResultText(res.data)}
+      {isSynopsis ? setResultText(res.data.replace(/\n/g, '')) : setResultText(res.data)}
       setIsLoading(false);
     }).catch((err) => {
       console.log(err);

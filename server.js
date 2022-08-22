@@ -17,7 +17,7 @@ const app = express();
 // app.set('trust proxy', 1);
 
 
-app.use(cors());
+// app.use(cors());
 
 if (process.env.NODE_ENV=== "production") {
   app.use(express.static("client/build"));
@@ -28,8 +28,11 @@ if (process.env.NODE_ENV=== "production") {
   });
 }
 
+app.get('/', (req, res) => {
+  res.send("APP IS RUNNING.");
+})
+
 app.get('/plot', (req, res) => {
-  res.json("hey girl");
   axios.post('https://api.openai.com/v1/completions', {
       model: "text-davinci-002",
       prompt: req.query.prompt,
