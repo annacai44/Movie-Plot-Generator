@@ -19,14 +19,14 @@ const app = express();
 
 // app.use(cors());
 
-if (process.env.NODE_ENV=== "production") {
-  app.use(express.static("client/build"));
+// if (process.env.NODE_ENV=== "production") {
+//   app.use(express.static("client/build"));
 
-  // index.html for all page routes html or routing and naviagtion
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-  });
-}
+//   // index.html for all page routes html or routing and naviagtion
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+//   });
+// }
 
 app.get('/', (req, res) => {
   res.send("APP IS RUNNING.");
