@@ -18,7 +18,6 @@ function App() {
 
   const getOpenAIResponse = () => {
     setIsLoading(true);
-    console.log("HI BITCH", process.env.REACT_APP_API_URL);
     axios.get(`${process.env.REACT_APP_API_URL}/plot`, {
       params: {
         model: "text-davinci-002",
@@ -28,7 +27,7 @@ function App() {
       }
     })
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       {isSynopsis ? setResultText(res.data.replace(/\n/g, '')) : setResultText(res.data)}
       setIsLoading(false);
     }).catch((err) => {
@@ -38,7 +37,6 @@ function App() {
 
   useEffect(() => {
     if (isMounted.current) {
-      console.log("this is useEffect:", isSynopsis);
       getOpenAIResponse();
     } else {
       isMounted.current = true;
