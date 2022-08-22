@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Movie-Plot-Generator/static/css/main.38e22a38.css",
-    "main.js": "/Movie-Plot-Generator/static/js/main.003b322c.js",
+    "main.js": "/Movie-Plot-Generator/static/js/main.415217a3.js",
     "static/js/787.623dcd32.chunk.js": "/Movie-Plot-Generator/static/js/787.623dcd32.chunk.js",
     "static/media/brand-icons.svg": "/Movie-Plot-Generator/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/Movie-Plot-Generator/static/media/icons.62d9dae4e0040e81c980.svg",
@@ -21,11 +21,11 @@
     "static/media/outline-icons.woff2": "/Movie-Plot-Generator/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/Movie-Plot-Generator/index.html",
     "main.38e22a38.css.map": "/Movie-Plot-Generator/static/css/main.38e22a38.css.map",
-    "main.003b322c.js.map": "/Movie-Plot-Generator/static/js/main.003b322c.js.map",
+    "main.415217a3.js.map": "/Movie-Plot-Generator/static/js/main.415217a3.js.map",
     "787.623dcd32.chunk.js.map": "/Movie-Plot-Generator/static/js/787.623dcd32.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38e22a38.css",
-    "static/js/main.003b322c.js"
+    "static/js/main.415217a3.js"
   ]
 }
