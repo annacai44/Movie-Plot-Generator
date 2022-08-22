@@ -6,15 +6,15 @@ import axios from 'axios';
 
 function App() {
   const [inputText, setInputText] = useState('');
-  const [inputLength, setInputLength] = useState('');
-  const [inputTheme, setInputTheme] = useState('');
+  const [inputLength, setInputLength] = useState('10 minutes');
+  const [inputTheme, setInputTheme] = useState('Comedy');
   const [resultText, setResultText] = useState('');
   const [isSynopsis, setIsSynopsis] = useState(true);
   const [sliderValue, setSliderValue] = useState('0.5');
   const isMounted = useRef(false);
   const [isLoading, setIsLoading] = useState(false);
-  const prompt1 = `Keywords: ${inputText}\nWrite a harmless synopsis for an interesting ${inputLength} long ${inputTheme} film that includes all of the keywords.\nSynopsis:\n`
-  const prompt2 = `Keywords: ${inputText}\nWrite a short excerpt from an interesting ${inputLength} long ${inputTheme} film with a plot that incorporates all of the keywords. Present the excerpt in proper script format.\nExcerpt:\n`
+  const prompt1 = `Keywords: ${inputText}\nWrite a short harmless PG synopsis for an interesting ${inputLength} long ${inputTheme} film that includes all of the keywords.\nSynopsis:\n`
+  const prompt2 = `Keywords: ${inputText}\nWrite a short harmless PG excerpt from an interesting ${inputLength} long ${inputTheme} film with a plot that incorporates all of the keywords. Present the excerpt in proper script format.\nExcerpt:\n`
 
   const getOpenAIResponse = () => {
     setIsLoading(true);
@@ -73,8 +73,8 @@ function App() {
 
                 <h3>Choose genre of film.</h3>
                 <select onChange={(e) => setInputTheme(e.target.value)}>
-                    <option>Drama</option>
                     <option>Comedy</option>
+                    <option>Drama</option>
                     <option>Action</option>
                     <option>Science fiction</option>
                     <option>Adventure</option>

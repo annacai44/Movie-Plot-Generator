@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 // Rate limiting
-// const limiter = rateLimit({
-//   windowMs: 10 * 60 * 1000, // 10 minutes
-//   max: 5
-// });
-// app.use(limiter);
-// app.set('trust proxy', 1);
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 minutes
+  max: 5
+});
+app.use(limiter);
+app.set('trust proxy', 1);
 
 app.use(cors());
 
