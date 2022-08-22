@@ -18,7 +18,7 @@ function App() {
 
   const getOpenAIResponse = () => {
     setIsLoading(true);
-    axios.get(process.env.REACT_APP_API_URL, {
+    axios.get(`${process.env.REACT_APP_API_URL}/plot`, {
       params: {
         model: "text-davinci-002",
         prompt: `${isSynopsis ? prompt1 : prompt2}`,
