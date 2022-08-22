@@ -30,20 +30,20 @@ if (process.env.NODE_ENV=== "production") {
 
 app.get('/plot', (req, res) => {
   res.json("hey girl");
-  // axios.post('https://api.openai.com/v1/completions', {
-  //     model: "text-davinci-002",
-  //     prompt: req.query.prompt,
-  //     max_tokens: 256,
-  //     temperature: parseInt(req.query.sliderValue),
-  //   }, {
-  //     headers: {
-  //       'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-  //     }
-  //   }).then((response) => {
-  //     res.json(response.data.choices[0].text)
-  //   }).catch((err) => {
-  //     console.log(err);
-  //   })
+  axios.post('https://api.openai.com/v1/completions', {
+      model: "text-davinci-002",
+      prompt: req.query.prompt,
+      max_tokens: 256,
+      temperature: parseInt(req.query.sliderValue),
+    }, {
+      headers: {
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+      }
+    }).then((response) => {
+      res.json(response.data.choices[0].text)
+    }).catch((err) => {
+      console.log(err);
+    })
 })
 
 // listen out to changes on our port
