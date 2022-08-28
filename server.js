@@ -2,7 +2,6 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const apicache = require('apicache');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 8000;
@@ -10,21 +9,21 @@ const app = express();
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 5
+  windowMs: 60 * 1000, // 1 minute
+  max: 10
 });
 app.use(limiter);
 app.set('trust proxy', 1);
 
 app.use(cors());
 
-// if (process.env.NODE_ENV=== "production") {
-//   app.use(express.static("client/build"));
+if (process.env.NODE_ENV=== "production") {
+  app.use(express.static("client/build"));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-//   });
-// }
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 app.get('/plot', (req, res) => {
   axios.post('https://api.openai.com/v1/completions', {
